@@ -98,7 +98,7 @@ include "../config.php";
         </div>
     </nav>
     <!-- NAVBAR -->
-    
+
     <br>
     <!-- INPUT FORM -->
     <div class="container mt-5">
@@ -116,13 +116,13 @@ include "../config.php";
 
                             <label for="exampleInputEmail1" class="form-label mt-4">Id Kriteria</label>
                             <select name="idkriteria" class="form-control">
-                                <option value="idkriteria" disabled selected>-- Pilih Kriteria --</option>
+                                <option value="" disabled selected>-- Pilih Kriteria --</option>
 
                                 <?php
                                 $sql = "SELECT * FROM tb_kriteria";
                                 $a = $koneksi->query($sql);
                                 while ($b = $a->fetch_array()) { ?>
-                                    <option name="idkriteria" value="<? $b['idkriteria']; ?>"> <?= $b['idkriteria'] ?></option>
+                                    <option name="" value="<? $b['idkriteria']; ?>"> <?= $b['idkriteria'] ?></option>
                                 <?php
                                 }
                                 ?>

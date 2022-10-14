@@ -1,0 +1,42 @@
+body{
+    background-color: #ffff;
+    font-size: 14px;
+    font-family:'Poppins', sans-serif;
+    color: #2d2d2d;
+}
+.row-judul{
+    background-color: white;
+    margin: 0px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.judul{
+    margin-top: 5px;
+}
+.row-data{
+    background-color: white;
+    margin: 0px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.data{
+    margin-top: 5px;
+}
+.card-text{
+    font-weight: bold;
+    color: darkgoldenrod;
+}
+.card{
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px 0px rgb(40, 39, 39);
+}
+.card-header{
+    border-radius: 8px;
+}
+.card-body{
+    border-radius: 8px;
+   
+}
+.navbar{
+    font-family:'Poppins', sans-serif;
+}

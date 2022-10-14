@@ -120,7 +120,7 @@ include "../config.php";
                             <input type="text" class="form-control" name="value" required="" placeholder="idskala">
 
                             <label for="exampleInputEmail1" class="form-label">Keterangan</label>
-                            <input type="text" class="form-control" name="idskala" required="" placeholder="idskala">
+                            <input type="text" class="form-control" name="keterangan" required="" placeholder="idskala">
 
 
 

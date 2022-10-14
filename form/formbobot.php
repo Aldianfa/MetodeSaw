@@ -116,20 +116,21 @@ include "../config.php";
 
                             <label for="exampleInputEmail1" class="form-label mt-4">Id Kriteria</label>
                             <select name="idkriteria" class="form-control">
-                                <option value="" disabled selected>-- Pilih Kriteria --</option>
+                                <option value="idkriteria" disabled selected>-- Pilih Kriteria --</option>
 
                                 <?php
                                 $sql = "SELECT * FROM tb_kriteria";
                                 $a = $koneksi->query($sql);
                                 while ($b = $a->fetch_array()) { ?>
-                                    <option value="<? $b['idkriteria']; ?>"> <?= $b['idkriteria'] ?> - <?= $b['nmkriteria']; ?></option>
+                                    <option name="idkriteria" value="<? $b['idkriteria']; ?>"> <?= $b['idkriteria'] ?></option>
                                 <?php
                                 }
                                 ?>
+                                
                             </select>
 
                             <label for="exampleInputEmail1" class="form-label mt-4">value</label>
-                            <input type="text" class="form-control" name="nmalternatif" required="" placeholder="nama alternatif">
+                            <input type="text" class="form-control" name="nilai" required="" placeholder="value">
                         </div>
                     </div>
                     <div class="row ">

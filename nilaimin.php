@@ -95,11 +95,11 @@
     <!-- NAVBAR -->
 
 <br>
-
+    <!-- TABEL MINIMUM-->
     <div class="container mt-5">
         <div class="card mt-3">
             <div class="card-header bg-dark text-center text-white fs-22">
-                Nilai Maksimum
+                Nilai Minimum
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
@@ -107,21 +107,21 @@
                         <tr class="text-center">
                             <td>Id Kriteria</td>
                             <td>Nama Kriteria</td>
-                            <td>Maksimum</td>
+                            <td>Minimum</td>
 
                         </tr>
                     </thead>
                     <?php
                     include "config.php";
                     $idkriteria = 1;
-                    $a = "SELECT * FROM nilaimax";
+                    $a = "SELECT * FROM nilaimin";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
                             <td><?php echo $idkriteria++; ?></td>
                             <td><?php echo $c['nmkriteria']; ?></td>
-                            <td><?php echo $c['maksimum']; ?></td>
+                            <td><?php echo $c['minimum']; ?></td>
                         </tr>
                     <?php
                     }
@@ -130,6 +130,7 @@
             </div>
         </div>
     </div>
+    <!-- TABEL -->
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>

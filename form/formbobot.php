@@ -98,7 +98,7 @@ include "../config.php";
         </div>
     </nav>
     <!-- NAVBAR -->
-
+    
     <br>
     <!-- INPUT FORM -->
     <div class="container mt-5">
@@ -126,7 +126,7 @@ include "../config.php";
                                 <?php
                                 }
                                 ?>
-                                
+
                             </select>
 
                             <label for="exampleInputEmail1" class="form-label mt-4">value</label>

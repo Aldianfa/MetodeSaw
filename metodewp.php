@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Metode SAW</title>
+    <title>Metode WP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -111,7 +111,7 @@
                     </thead>
                     <?php
                     include "config.php";
-                    $a = "SELECT * FROM wp_jumbobot";
+                    $a = "SELECT SUM(VALUE) AS jumlah FROM tb_bobot";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>

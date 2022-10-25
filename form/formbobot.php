@@ -90,7 +90,9 @@ include "../config.php";
                     </form>
                 </div>
             </div>
-            <a class="navbar-brand" href="#"> <h3>DSS Penerima BPUM 2022</h3> </a>
+            <a class="navbar-brand" href="#">
+                <h3>DSS Penerima BPUM 2022</h3>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -115,18 +117,16 @@ include "../config.php";
                             <input type="text" class="form-control" name="idbobot" required="" placeholder="idbobot">
 
                             <label for="exampleInputEmail1" class="form-label mt-4">Id Kriteria</label>
-                            <select name="idkriteria" class="form-control">
-                                <option value="" disabled selected>-- Pilih Kriteria --</option>
-
+                            <select class="form-select" name="idkriteria">
+                                <option>----</option>
                                 <?php
-                                $sql = "SELECT * FROM tb_kriteria";
-                                $a = $koneksi->query($sql);
-                                while ($b = $a->fetch_array()) { ?>
-                                    <option name="" value="<? $b['idkriteria']; ?>"> <?= $b['idkriteria'] ?></option>
-                                <?php
+                                include "../config.php";
+                                $a = "SELECT * FROM tb_kriteria";
+                                $b = $koneksi->query($a);
+                                while ($c = $b->fetch_array()) {
+                                    echo "<option value=$c[idkriteria]> $c[nmkriteria] </option>";
                                 }
                                 ?>
-
                             </select>
 
                             <label for="exampleInputEmail1" class="form-label mt-4">value</label>

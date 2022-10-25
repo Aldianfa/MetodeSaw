@@ -96,33 +96,27 @@
 
     <br>
 
-    <!-- TABEL MAKSIMUM-->
+    <!-- WP Jumlah Bobot-->
     <div class="container mt-5">
         <div class="card mt-3">
             <div class="card-header bg-dark text-center text-white fs-22">
-                Nilai Maksimum
+                Jumlah Bobot
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr class="text-center">
-                            <td>Id Kriteria</td>
-                            <td>Nama Kriteria</td>
-                            <td>Maksimum</td>
-
+                            <td>Jumlah</td>
                         </tr>
                     </thead>
                     <?php
                     include "config.php";
-                    $idkriteria = 1;
-                    $a = "SELECT * FROM nilaimax";
+                    $a = "SELECT * FROM wp_jumbobot";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
-                            <td><?php echo $idkriteria++; ?></td>
-                            <td><?php echo $c['nmkriteria']; ?></td>
-                            <td><?php echo $c['maksimum']; ?></td>
+                            <td><?php echo $c['jumlah']; ?></td>
                         </tr>
                     <?php
                     }
@@ -131,35 +125,35 @@
             </div>
         </div>
     </div>
-    <!-- TABEL -->
+    <!-- WP Jumlah Bobot -->
 
-    <!-- TABEL MINIMUM-->
+    <!-- WP Nilai S -->
     <div class="container mt-5">
         <div class="card mt-3">
             <div class="card-header bg-dark text-center text-white fs-22">
-                Nilai Minimum
+                Nilai S
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr class="text-center">
-                            <td>Id Kriteria</td>
-                            <td>Nama Kriteria</td>
-                            <td>Minimum</td>
+                            <td>Id Alternatif</td>
+                            <td>Nama Alternatif</td>
+                            <td>Nilai S</td>
 
                         </tr>
                     </thead>
                     <?php
                     include "config.php";
-                    $idkriteria = 1;
-                    $a = "SELECT * FROM nilaimin";
+                    // $idkriteria = 1;
+                    $a = "SELECT * FROM wp_nilais";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
-                            <td><?php echo $idkriteria++; ?></td>
-                            <td><?php echo $c['nmkriteria']; ?></td>
-                            <td><?php echo $c['minimum']; ?></td>
+                            <td><?php echo $c['idalternatif']; ?></td>
+                            <td><?php echo $c['nmalternatif']; ?></td>
+                            <td><?php echo $c['nilaiS']; ?></td>
                         </tr>
                     <?php
                     }
@@ -168,13 +162,90 @@
             </div>
         </div>
     </div>
-    <!-- TABEL -->
+    <!-- WP Nilai S -->
 
-    <!-- TABEL MATRIX-->
+    <!-- WP Nilai V -->
     <div class="container mt-5">
         <div class="card mt-3">
             <div class="card-header bg-dark text-center text-white fs-22">
-                View Matrix Keputusan
+                WP Nilai V
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Id Alternatif</td>
+                            <td>Nama Alternatif</td>
+                            <td>Nilai V</td>
+                        </tr>
+                    </thead>
+                    <?php
+                    include "config.php";
+                    // $idkriteria = 1;
+                    $a = "SELECT * FROM wp_nilaiv";
+                    $b = $koneksi->query($a);
+                    while ($c = $b->fetch_array()) {
+                    ?>
+                        <tr>
+                            
+                            <td><?php echo $c['idalternatif']; ?></td>
+                            <td><?php echo $c['nmalternatif']; ?></td>
+                            <td><?php echo $c['nilaiV']; ?></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- WP Nilai V -->
+
+    <!-- WP Normalisasi -->
+    <div class="container mt-5">
+        <div class="card mt-3">
+            <div class="card-header bg-dark text-center text-white fs-22">
+                WP Normalisasi Terbobot
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Id Bobot</td>
+                            <td>Id Kriteria</td>
+                            <td>Value</td>
+                            <td>jumlah</td>
+                            <td>Normalisasi_w</td>
+                        </tr>
+                    </thead>
+                    <?php
+                    include "config.php";
+                    // $idkriteria = 1;
+                    $a = "SELECT * FROM wp_normalisasiterbobot";
+                    $b = $koneksi->query($a);
+                    while ($c = $b->fetch_array()) {
+                    ?>
+                        <tr>
+                            <td><?php echo $c['idbobot']; ?></td>
+                            <td><?php echo $c['idkriteria']; ?></td>
+                            <td><?php echo $c['value']; ?></td>
+                            <td><?php echo $c['jumlah']; ?></td>
+                            <td><?php echo $c['normalisasi_w']; ?></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- WP Normalisasi -->
+
+    <!-- WP Pangkat -->
+    <div class="container mt-5">
+        <div class="card mt-3">
+            <div class="card-header bg-dark text-center text-white fs-22">
+                WP Pangkat
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
@@ -190,12 +261,14 @@
                             <td>Value</td>
                             <td>Nilai</td>
                             <td>Keterangan</td>
+                            <td>Normalisasi_W</td>
+                            <td>Pangkat</td>
                         </tr>
                     </thead>
                     <?php
                     include "config.php";
                     // $idkriteria = 1;
-                    $a = "SELECT * FROM vmatrixkeputusan";
+                    $a = "SELECT * FROM wp_pangkat";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
@@ -210,6 +283,8 @@
                             <td><?php echo $c['value']; ?></td>
                             <td><?php echo $c['nilai']; ?></td>
                             <td><?php echo $c['keterangan']; ?></td>
+                            <td><?php echo $c['normalisasi_w']; ?></td>
+                            <td><?php echo $c['pangkat']; ?></td>
                         </tr>
                     <?php
                     }
@@ -218,50 +293,30 @@
             </div>
         </div>
     </div>
-    <!-- TABEL -->
+    <!-- WP Pangkat -->
 
-    <!-- TABEL NORMALISASI-->
+    <!-- WP SumS -->
     <div class="container mt-5">
         <div class="card mt-3">
             <div class="card-header bg-dark text-center text-white fs-22">
-                View Normalisasi
+                WP Sums
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Id Matrix</td>
-                            <td>Id Alternatif</td>
-                            <td>Nama Alternatif</td>
-                            <td>Id Kriteria</td>
-                            <td>Nama Kriteria</td>
-                            <td>Tipe</td>
-                            <td>Id Bobot</td>
-                            <td>Value</td>
-                            <td>Nilai</td>
-                            <td>Keterangan</td>
-                            <td>Normalisasi</td>
+                            <td>jumlah Sum S</td>
                         </tr>
                     </thead>
                     <?php
                     include "config.php";
                     // $idkriteria = 1;
-                    $a = "SELECT * FROM vnormalisasi";
+                    $a = "SELECT * FROM wp_sums";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
-                            <td><?php echo $c['idmatrix']; ?></td>
-                            <td><?php echo $c['idalternatif']; ?></td>
-                            <td><?php echo $c['nmalternatif']; ?></td>
-                            <td><?php echo $c['idkriteria']; ?></td>
-                            <td><?php echo $c['nmkriteria']; ?></td>
-                            <td><?php echo $c['tipe']; ?></td>
-                            <td><?php echo $c['idbobot']; ?></td>
-                            <td><?php echo $c['value']; ?></td>
-                            <td><?php echo $c['nilai']; ?></td>
-                            <td><?php echo $c['keterangan']; ?></td>
-                            <td><?php echo $c['normalisasi']; ?></td>
+                            <td><?php echo $c['jum']; ?></td>
                         </tr>
                     <?php
                     }
@@ -270,98 +325,7 @@
             </div>
         </div>
     </div>
-    <!-- TABEL -->
-
-    <!-- TABEL PraRangking-->
-    <div class="container mt-5">
-        <div class="card mt-3">
-            <div class="card-header bg-dark text-center text-white fs-22">
-                View Pra Rangking
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <td>Id Matrix</td>
-                            <td>Id Alternatif</td>
-                            <td>Nama Alternatif</td>
-                            <td>Id Kriteria</td>
-                            <td>Nama Kriteria</td>
-                            <td>Tipe</td>
-                            <td>Id Bobot</td>
-                            <td>Value</td>
-                            <td>Nilai</td>
-                            <td>Keterangan</td>
-                            <td>Normalisasi</td>
-                            <td>Pra Rangking</td>
-                        </tr>
-                    </thead>
-                    <?php
-                    include "config.php";
-                    // $idkriteria = 1;
-                    $a = "SELECT * FROM vprarangking";
-                    $b = $koneksi->query($a);
-                    while ($c = $b->fetch_array()) {
-                    ?>
-                        <tr>
-                            <td><?php echo $c['idmatrix']; ?></td>
-                            <td><?php echo $c['idalternatif']; ?></td>
-                            <td><?php echo $c['nmalternatif']; ?></td>
-                            <td><?php echo $c['idkriteria']; ?></td>
-                            <td><?php echo $c['nmkriteria']; ?></td>
-                            <td><?php echo $c['tipe']; ?></td>
-                            <td><?php echo $c['idbobot']; ?></td>
-                            <td><?php echo $c['value']; ?></td>
-                            <td><?php echo $c['nilai']; ?></td>
-                            <td><?php echo $c['keterangan']; ?></td>
-                            <td><?php echo $c['normalisasi']; ?></td>
-                            <td><?php echo $c['prarangking']; ?></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
-            </div>
-        </div>
-    </div>
-    <!-- TABEL -->
-
-    <!-- TABEL Rangking-->
-    <div class="container mt-5">
-        <div class="card mt-3">
-            <div class="card-header bg-dark text-center text-white fs-22">
-                View Rangking
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-
-                            <td>Id Alternatif</td>
-                            <td>Nama Alternatif</td>
-                            <td>Rangking</td>
-                        </tr>
-                    </thead>
-                    <?php
-                    include "config.php";
-                    // $idkriteria = 1;
-                    $a = "SELECT * FROM vrangking";
-                    $b = $koneksi->query($a);
-                    while ($c = $b->fetch_array()) {
-                    ?>
-                        <tr>
-                            <td><?php echo $c['idalternatif']; ?></td>
-                            <td><?php echo $c['nmalternatif']; ?></td>
-                            <td><?php echo $c['rangking']; ?></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
-            </div>
-        </div>
-    </div>
-    <!-- TABEL -->
+    <!-- WP SumS -->
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

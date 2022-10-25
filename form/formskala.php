@@ -107,7 +107,7 @@ include "../config.php";
         <br>
         <div class="card mt-1">
             <div class="card-header bg-dark text-center text-white fs-22">
-                <h2>Input Matrix</h2>
+                <h2>Input Skala</h2>
             </div>
             <div class="card-body">
                 <form action="../aksi/actskala.php" method="POST">

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+<!-- NAVBAR -->
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
@@ -21,8 +22,30 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="home.php">Home</a>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="metodesaw.php">Metode SAW</a>
+
+                    <!-- Drop DOWN Metode -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Metode
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="metodesaw.php">Metode SAW</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="metodewp.php">Metode WP</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="metodetopsis.php">Metode Topsis</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- DROP DOWN METODE -->
+
+                    <!-- Drop DOWN TABEL DETAIL -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Detail Tabel
@@ -47,7 +70,9 @@
                             <li><a class="dropdown-item" href="form/formskala.php">Tabel Skala</a></li>
                         </ul>
                     </li>
-                    <!-- Batas -->
+                    <!-- DROP DOWN TABEL DETAIL -->
+
+                    <!-- DROP DOWN TABEL METODE SAW -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Tabel View
@@ -76,7 +101,7 @@
                             <li><a class="dropdown-item" href="vrangking.php">Rangking</a></li>
                         </ul>
                     </li>
-                    <!-- Batas -->
+                    <!-- DROP DOWN TABEL METODE SAW -->
 
                 </ul>
                 <form class="d-flex mt-3" role="search">
@@ -92,6 +117,7 @@
 
     </div>
 </nav>
+<!-- NAVBAR -->
 
 <body>
 

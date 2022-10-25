@@ -117,45 +117,42 @@ include "../config.php";
                             <input type="text" class="form-control" name="idmatrix" required="" placeholder="idmatrix">
 
                             <label for="exampleInputEmail1" class="form-label mt-4">Id Alternatif</label>
-                            <select name="idalternatif" class="form-control">
-                                <option value="" disabled selected>-- Pilih Alternatif --</option>
-
+                            <select class="form-select" name="idalternatif">
+                                <option disabled selected>--Pilih Alternatif--</option>
                                 <?php
-                                $sql = "SELECT * FROM tb_alternatif";
-                                $a = $koneksi->query($sql);
-                                while ($b = $a->fetch_array()) { ?>
-                                    <option value="<? $b['idalternatif']; ?>"> <?= $b['idalternatif'] ?> - <?= $b['nmalternatif']; ?></option>
-                                <?php
+                                include "../config.php";
+                                $a = "SELECT * FROM tb_alternatif";
+                                $b = $koneksi->query($a);
+                                while ($c = $b->fetch_array()) {
+                                    echo "<option value=$c[idalternatif]> $c[nmalternatif] </option>";
                                 }
                                 ?>
                             </select>
 
 
                             <label for="exampleInputEmail1" class="form-label mt-4">Id Bobot</label>
-                            <select name="idbobot" class="form-control">
-                                <option value="" disabled selected>-- Pilih Bobot --</option>
-
+                            <select class="form-select" name="idbobot">
+                                <option disabled selected>--Pilih Bobot--</option>
                                 <?php
-                                $sql = "SELECT * FROM tb_bobot";
-                                $a = $koneksi->query($sql);
-                                while ($b = $a->fetch_array()) { ?>
-                                    <option value="<? $b['idbobot']; ?>"> <?= $b['idbobot'] ?> - <?= $b['value'] ?></option>
-                                <?php
+                                include "../config.php";
+                                $a = "SELECT * FROM tb_bobot";
+                                $b = $koneksi->query($a);
+                                while ($c = $b->fetch_array()) {
+                                    echo "<option value=$c[idbobot]> $c[idbobot] - $c[value] </option>";
                                 }
                                 ?>
                             </select>
 
 
                             <label for="exampleInputEmail1" class="form-label mt-4">Id Skala</label>
-                            <select name="idskala" class="form-control">
-                                <option value="" disabled selected>-- Pilih Skala --</option>
-
+                            <select class="form-select" name="idskala">
+                                <option disabled selected>--Pilih Skala--</option>
                                 <?php
-                                $sql = "SELECT * FROM tb_skala";
-                                $a = $koneksi->query($sql);
-                                while ($b = $a->fetch_array()) { ?>
-                                    <option value="<? $b['idskala']; ?>"> <?= $b['idskala'] ?> </option>
-                                <?php
+                                include "../config.php";
+                                $a = "SELECT * FROM tb_skala";
+                                $b = $koneksi->query($a);
+                                while ($c = $b->fetch_array()) {
+                                    echo "<option value=$c[idskala]> $c[idskala] </option>";
                                 }
                                 ?>
                             </select>

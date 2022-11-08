@@ -19,13 +19,33 @@
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="home.php">Home</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li> -->
+
+                            <!-- Drop DOWN Metode -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Detail Tabel
+                                Metode
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="metodesaw.php">Metode SAW</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="metodewp.php">Metode WP</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="metodetopsis.php">Metode Topsis</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- DROP DOWN METODE -->
+
+                        <!-- Drop DOWN TABEL DETAIL -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Tabel Utama
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" href="form/formalternatif.php">Tabel Alternatif</a></li>
@@ -47,7 +67,9 @@
                                 <li><a class="dropdown-item" href="form/formskala.php">Tabel Skala</a></li>
                             </ul>
                         </li>
-                        <!-- Batas -->
+                        <!-- DROP DOWN TABEL DETAIL -->
+
+                        <!-- DROP DOWN TABEL METODE SAW -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Tabel View
@@ -76,7 +98,7 @@
                                 <li><a class="dropdown-item" href="vrangking.php">Rangking</a></li>
                             </ul>
                         </li>
-                        <!-- Batas -->
+                        <!-- DROP DOWN TABEL METODE SAW -->
 
                     </ul>
                     <form class="d-flex mt-3" role="search">
@@ -85,7 +107,7 @@
                     </form>
                 </div>
             </div>
-            <a class="navbar-brand" href="#"> <b>DSS Penerima BPUM 2022</a>
+            <a class="navbar-brand" href="index.php"> <b>DSS Penerima BPUM 2022</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -94,11 +116,11 @@
     </nav>
     <!-- NAVBAR -->
 
-<br>
+    <br>
     <!-- TABEL -->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-dark text-center text-white fs-22">
+            <div class="card-header bg-secondary text-center text-white fs-22">
                 Nilai Maksimum
             </div>
             <div class="card-body">
@@ -131,6 +153,11 @@
         </div>
     </div>
     <!-- TABEL -->
+
+    <br>
+    <div class="footer text-center">
+        <p>Aldian Faizzul Anwar-200605110170 &copy; <?php echo date("Y") ?></p> <!-- membuat tahun secara dinamic dengan PHP  -->
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>

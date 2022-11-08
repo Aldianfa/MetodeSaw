@@ -48,7 +48,7 @@
                     <!-- Drop DOWN TABEL DETAIL -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Detail Tabel
+                            Tabel Utama
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="form/formalternatif.php">Tabel Alternatif</a></li>
@@ -110,7 +110,7 @@
                 </form>
             </div>
         </div>
-        <a class="navbar-brand" href="#"> <b>DSS Penerima BPUM 2022</a>
+        <a class="navbar-brand" href="index.php"> <b>DSS Penerima BPUM 2022</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -128,7 +128,7 @@
                 <div class="container py-4">
                     <h1 class="display-4 fw-bold"></h1>
                     <p class="col-md-8 fs-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit, officiis, necessitatibus amet odit sapiente at harum reprehenderit, itaque suscipit exercitationem repellat molestiae doloribus saepe ex in libero. Voluptate, cupiditate!</p>
-                    <a class="btn btn-success fs-4" href="home.php">Masuk</a>
+                    <a class="btn btn-success fs-4" href="home.php">Lihat Data</a>
                 </div>
             </div>
         </div>
@@ -139,6 +139,11 @@
         </div>
     </div>
     <!-- Jumbotron -->
+
+    <br>
+    <div class="footer text-center">
+        <p>Aldian Faizzul Anwar-200605110170 &copy; <?php echo date("Y") ?></p> <!-- membuat tahun secara dinamic dengan PHP  -->
+    </div>
 
 
 

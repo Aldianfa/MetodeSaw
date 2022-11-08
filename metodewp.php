@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+
+
 <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -19,13 +21,33 @@
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="home.php">Home</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li> -->
+
+                            <!-- Drop DOWN Metode -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Detail Tabel
+                                Metode
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="metodesaw.php">Metode SAW</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="metodewp.php">Metode WP</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="metodetopsis.php">Metode Topsis</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- DROP DOWN METODE -->
+
+                        <!-- Drop DOWN TABEL DETAIL -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Tabel Utama
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" href="form/formalternatif.php">Tabel Alternatif</a></li>
@@ -47,7 +69,9 @@
                                 <li><a class="dropdown-item" href="form/formskala.php">Tabel Skala</a></li>
                             </ul>
                         </li>
-                        <!-- Batas -->
+                        <!-- DROP DOWN TABEL DETAIL -->
+
+                        <!-- DROP DOWN TABEL METODE SAW -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Tabel View
@@ -76,7 +100,7 @@
                                 <li><a class="dropdown-item" href="vrangking.php">Rangking</a></li>
                             </ul>
                         </li>
-                        <!-- Batas -->
+                        <!-- DROP DOWN TABEL METODE SAW -->
 
                     </ul>
                     <form class="d-flex mt-3" role="search">
@@ -85,7 +109,7 @@
                     </form>
                 </div>
             </div>
-            <a class="navbar-brand" href="#"> <b>DSS Penerima BPUM 2022</a>
+            <a class="navbar-brand" href="index.php"> <b>DSS Penerima BPUM 2022</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -94,21 +118,22 @@
     </nav>
     <!-- NAVBAR -->
 
+
     <br>
 
     <!-- WP Jumlah Bobot-->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-dark text-center text-white fs-22">
-                Jumlah Bobot
+            <div class="card-header bg-primary text-center text-white fs-22">
+                <h4>Jumlah Bobot</h4>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
-                    <thead>
+                    
                         <tr class="text-center">
-                            <td>Jumlah</td>
+                            <th>Jumlah</th>
                         </tr>
-                    </thead>
+                    
                     <?php
                     include "config.php";
                     $a = "SELECT SUM(VALUE) AS jumlah FROM tb_bobot";
@@ -130,19 +155,19 @@
     <!-- WP Nilai S -->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-dark text-center text-white fs-22">
-                Nilai S
+            <div class="card-header bg-primary text-center text-white">
+                <h4>Nilai S</h4>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
-                    <thead>
+                    
                         <tr class="text-center">
-                            <td>Id Alternatif</td>
-                            <td>Nama Alternatif</td>
-                            <td>Nilai S</td>
+                            <th>Id Alternatif</th>
+                            <th>Nama Alternatif</th>
+                            <th>Nilai S</th>
 
                         </tr>
-                    </thead>
+                    
                     <?php
                     include "config.php";
                     // $idkriteria = 1;
@@ -167,16 +192,16 @@
     <!-- WP Nilai V -->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-dark text-center text-white fs-22">
-                WP Nilai V
+            <div class="card-header bg-primary text-center text-white">
+                <h4>WP Nilai V</h4>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Id Alternatif</td>
-                            <td>Nama Alternatif</td>
-                            <td>Nilai V</td>
+                            <th>Id Alternatif</th>
+                            <th>Nama Alternatif</th>
+                            <th>Nilai V</th>
                         </tr>
                     </thead>
                     <?php
@@ -187,7 +212,7 @@
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
-                            
+
                             <td><?php echo $c['idalternatif']; ?></td>
                             <td><?php echo $c['nmalternatif']; ?></td>
                             <td><?php echo $c['nilaiV']; ?></td>
@@ -204,20 +229,20 @@
     <!-- WP Normalisasi -->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-dark text-center text-white fs-22">
-                WP Normalisasi Terbobot
+            <div class="card-header bg-primary text-center text-white">
+                <h4>WP Normalisasi Terbobot</h4>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
-                    <thead>
+                    
                         <tr>
-                            <td>Id Bobot</td>
-                            <td>Id Kriteria</td>
-                            <td>Value</td>
-                            <td>jumlah</td>
-                            <td>Normalisasi_w</td>
+                            <th>Id Bobot</th>
+                            <th>Id Kriteria</th>
+                            <th>Value</th>
+                            <th>jumlah</th>
+                            <th>Normalisasi_w</th>
                         </tr>
-                    </thead>
+                    
                     <?php
                     include "config.php";
                     // $idkriteria = 1;
@@ -244,27 +269,27 @@
     <!-- WP Pangkat -->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-dark text-center text-white fs-22">
-                WP Pangkat
+            <div class="card-header bg-primary text-center text-white">
+                <h4>WP Pangkat</h4>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
-                    <thead>
+                
                         <tr>
-                            <td>Id Matrix</td>
-                            <td>Id Alternatif</td>
-                            <td>Nama Alternatif</td>
-                            <td>Id Kriteria</td>
-                            <td>Nama Kriteria</td>
-                            <td>Tipe</td>
-                            <td>Id Bobot</td>
-                            <td>Value</td>
-                            <td>Nilai</td>
-                            <td>Keterangan</td>
-                            <td>Normalisasi_W</td>
-                            <td>Pangkat</td>
+                            <th>Id Matrix</th>
+                            <th>Id Alternatif</th>
+                            <th>Nama Alternatif</th>
+                            <th>Id Kriteria</th>
+                            <th>Nama Kriteria</th>
+                            <th>Tipe</th>
+                            <th>Id Bobot</th>
+                            <th>Value</th>
+                            <th>Nilai</th>
+                            <th>Keterangan</th>
+                            <th>Normalisasi_W</th>
+                            <th>Pangkat</th>
                         </tr>
-                    </thead>
+                    
                     <?php
                     include "config.php";
                     // $idkriteria = 1;
@@ -298,16 +323,16 @@
     <!-- WP SumS -->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-dark text-center text-white fs-22">
-                WP Sums
+            <div class="card-header bg-primary text-center text-white">
+                <h4>WP Sums</h4>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
-                    <thead>
+                
                         <tr>
-                            <td>jumlah Sum S</td>
+                            <th>jumlah Sum S</th>
                         </tr>
-                    </thead>
+                    
                     <?php
                     include "config.php";
                     // $idkriteria = 1;
@@ -326,6 +351,12 @@
         </div>
     </div>
     <!-- WP SumS -->
+
+    <br>
+    <div class="footer text-center">
+        <p>Aldian Faizzul Anwar-200605110170 &copy; <?php echo date("Y") ?></p> <!-- membuat tahun secara dinamic dengan PHP  -->
+    </div>
+    
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

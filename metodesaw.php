@@ -117,6 +117,13 @@
     <!-- NAVBAR -->
 
     <br>
+    <div class="container mt-5">
+        <div class="card mt-3">
+            <div class="card-header bg-secondary text-center text-white fs-22">
+                <h4>Metode SAW</h4>
+            </div>
+        </div>
+    </div>
 
     <!-- TABEL MAKSIMUM-->
     <div class="container mt-5">

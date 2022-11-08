@@ -117,6 +117,13 @@
     <!-- NAVBAR -->
 
     <br>
+    <div class="container mt-5">
+        <div class="card mt-3">
+            <div class="card-header bg-success text-center text-white fs-22">
+                <h4>Metode Topsis</h4>
+            </div>
+        </div>
+    </div>
 
     <!-- TOPSIS PEMBAGI-->
     <div class="container mt-5">
@@ -158,7 +165,7 @@
     <!-- TOPSIS NORMALISASI-->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-secondary text-center text-white fs-22">
+            <div class="card-header bg-success text-center text-white fs-22">
                 <h4>Topsis Normalisasi</h4>
             </div>
             <div class="card-body">
@@ -211,7 +218,7 @@
     <!-- TOPSIS TERBOBOT-->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-secondary text-center text-white fs-22">
+            <div class="card-header bg-success text-center text-white fs-22">
                 <h4>Topsis Terbobot</h4>
             </div>
             <div class="card-body">
@@ -267,7 +274,7 @@
     <!-- TOPSIS MAXMIN-->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-secondary text-center text-white fs-22">
+            <div class="card-header bg-success text-center text-white fs-22">
                 <h4>Topsis MaxMin</h4>
             </div>
             <div class="card-body">
@@ -309,7 +316,7 @@
     <!-- TABEL NILAIV-->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-secondary text-center text-white fs-22">
+            <div class="card-header bg-success text-center text-white fs-22">
                 <h4>Topsis Nilai V</h4>
             </div>
             <div class="card-body">
@@ -347,7 +354,7 @@
     <!-- TABEL SIPSIN-->
     <div class="container mt-5">
         <div class="card mt-3">
-            <div class="card-header bg-secondary text-center text-white fs-22">
+            <div class="card-header bg-success text-center text-white fs-22">
                 <h4>Topsis Sipsin</h4>
             </div>
             <div class="card-body">

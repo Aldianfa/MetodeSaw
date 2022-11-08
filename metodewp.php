@@ -120,6 +120,13 @@
 
 
     <br>
+    <div class="container mt-5">
+        <div class="card mt-3">
+            <div class="card-header bg-primary text-center text-white fs-22">
+                <h4>Metode WP</h4>
+            </div>
+        </div>
+    </div>
 
     <!-- WP Jumlah Bobot-->
     <div class="container mt-5">

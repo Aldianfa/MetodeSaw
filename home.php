@@ -125,10 +125,15 @@
 
     <!-- TABEL KRITERIA-->
     <div class="container mt-5">
-
-        <!-- <div class="card-judul mt-3">
-            <h1 class="text-center"> <strong>Tabel Utama DSS</strong> </h1>
-        </div> -->
+    
+    <div class="container mt-5">
+        <div class="card mt-3">
+            <div class="card-header bg-dark text-center text-white fs-22">
+                <h4>Tabel Utama</h4>
+            </div>
+        </div>
+    </div>
+    <br>
 
         <div class="card mt-3">
             <div class="card-header bg-dark text-center text-white fs-22">

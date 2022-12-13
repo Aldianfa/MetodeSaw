@@ -15,12 +15,17 @@
                     <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Aldianfa-170</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
+                <div class="offcanvas-body fs-6">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+                            <a class="nav-link" aria-current="page" href="home.php">Home</a>
+                        </li>
+                        <li>
+                            <hr class="divider">
+                        </li>
 
-                            <!-- Drop DOWN Metode -->
+
+                        <!-- Drop DOWN Metode -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Metode
@@ -30,11 +35,15 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="metodewp.php">Metode WP</a></li>
+                                <li><a class="dropdown-item disabled" href="metodewp.php">Metode WP</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="metodetopsis.php">Metode Topsis</a></li>
+                                <li><a class="dropdown-item disabled" href="metodetopsis.php">Metode Topsis</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item disabled" href="metodemultimoora.php">Metode Multimoora</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -98,13 +107,22 @@
                                 <li><a class="dropdown-item" href="vrangking.php">Rangking</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="hasil.php">Hasil Akhir</a>
+                        </li>
+                        <li>
+                            <hr class="divider">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="referensi.php">Latar Belakang dan Referensi</a>
+                        </li>
                         <!-- DROP DOWN TABEL METODE SAW -->
 
                     </ul>
-                    <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-success" type="submit">Search</button>
-                    </form>
+                    <!-- <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form> -->
                 </div>
             </div>
             <a class="navbar-brand" href="index.php"> <b>DSS Penerima BPUM 2022</a>
@@ -142,7 +160,7 @@
                     ?>
                         <tr>
                             <td><?php echo $idkriteria++; ?></td>
-                            <td><?php echo $c['nmkriteria']; ?></td>
+                            <td><?php echo $c['nm_kriteria']; ?></td>
                             <td><?php echo $c['minimum']; ?></td>
                         </tr>
                     <?php

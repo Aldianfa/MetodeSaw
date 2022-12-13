@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Pra Rangking</title>
+    <title>Nilai Maksimum</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -133,52 +133,53 @@
         </div>
     </nav>
     <!-- NAVBAR -->
-
     <br>
-    <!-- TABEL PraRangking-->
+
     <div class="container mt-5">
         <div class="card mt-3">
             <div class="card-header bg-secondary text-center text-white fs-22">
-                View Pra Rangking
+                <h4>HASIL AKHIR REKOMENDASI PENERIMA BPUM 2022</h4>
+            </div>
+            <div class="card-body text-center">
+                <p>
+                <h6>
+                    Setelah melalui beberapa tahap perhitungan metode SAW, didapatkan bahwa rata-rata dari perhitungan ranking alternatif yaitu 0.74.
+                    Oleh karena itu data alternatif dengan total nilai >=0.74 dikatakan "LAYAK" untuk mendapatkan BANTUAN PRESIDEN USAHA MIKRO (BPUM) 2022 
+                </h6>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABEL Rangking-->
+    <div class="container mt-5">
+        <div class="card mt-3">
+            <div class="card-header bg-secondary text-center text-white fs-22">
+                View Rangking
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Id Matrix</td>
+
                             <td>Id Alternatif</td>
                             <td>Nama Alternatif</td>
-                            <td>Id Kriteria</td>
-                            <td>Nama Kriteria</td>
-                            <td>Tipe</td>
-                            <td>Id Bobot</td>
-                            <td>Value</td>
-                            <td>Nilai</td>
-                            <td>Keterangan</td>
-                            <td>Normalisasi</td>
-                            <td>Pra Rangking</td>
+                            <td>Rangking</td>
+                            <td>Keputusan</td>
                         </tr>
                     </thead>
                     <?php
                     include "config.php";
                     // $idkriteria = 1;
-                    $a = "SELECT * FROM prarangking";
+                    $a = "SELECT * FROM hasil ORDER BY rangking DESC";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
-                            <td><?php echo $c['id_matrix']; ?></td>
                             <td><?php echo $c['id_alternatif']; ?></td>
                             <td><?php echo $c['nm_alternatif']; ?></td>
-                            <td><?php echo $c['id_kriteria']; ?></td>
-                            <td><?php echo $c['nm_kriteria']; ?></td>
-                            <td><?php echo $c['tipe']; ?></td>
-                            <td><?php echo $c['id_bobot']; ?></td>
-                            <td><?php echo $c['bobot']; ?></td>
-                            <td><?php echo $c['nilai']; ?></td>
-                            <td><?php echo $c['keterangan']; ?></td>
-                            <td><?php echo $c['normalisasi']; ?></td>
-                            <td><?php echo $c['prarangking']; ?></td>
+                            <td><?php echo $c['rangking']; ?></td>
+                            <td><?php echo $c['keputusan']; ?></td>
                         </tr>
                     <?php
                     }
@@ -193,7 +194,10 @@
     <div class="footer text-center">
         <p>Aldian Faizzul Anwar-200605110170 &copy; <?php echo date("Y") ?></p> <!-- membuat tahun secara dinamic dengan PHP  -->
     </div>
-    
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 

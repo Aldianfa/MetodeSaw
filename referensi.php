@@ -26,7 +26,7 @@
                     <li>
                         <hr class="divider">
                     </li>
-                    
+
 
                     <!-- Drop DOWN Metode -->
                     <li class="nav-item dropdown">
@@ -114,9 +114,9 @@
                         <a class="nav-link " aria-current="page" href="hasil.php">Hasil Akhir</a>
                     </li>
                     <li>
-                                <hr class="divider">
-                            </li>
-                            <li class="nav-item">
+                        <hr class="divider">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link " aria-current="page" href="referensi.php">Latar Belakang dan Referensi</a>
                     </li>
                     <!-- DROP DOWN TABEL METODE SAW -->
@@ -140,32 +140,60 @@
 
 <body>
 
-    <!-- Jumbotron -->
-    <div class="row p-5 ">
-        <div class="col-md-6 col-12">
-            <div class="p-5 mb-2">
-                <div class="container py-5">
-                    <h1 class="display-4 fw-bold">
-                        Tugas Akhir Praktikum Sistem Informasi
-                    </h1>
-                    <p class="col-md-8 fs-4">Penerapan Metode Simple Additive Weighting Untuk Rekomendasi Penerima Bantuan Presiden Usaha Mikro 2022</p><br>
-                    <br><br><br>
-                    <a class="btn btn-success fs-4" href="home.php">Lihat Data</a>
+    <br>
+
+    <div class="container">
+        <!-- CARD -->
+        <div class="container mt-5">
+            <div class="row m-5">
+                <div class="col-lg-4 col-md-4 col-sm-2 col-4 mt-3">
+                    <div class="card text-center">
+                        <img src="img/baru.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4>DSS Rekomendasi BPNT Metode WP</h4>
+                            <p>Informatic and Computational Intelegent Journal
+                                Vol. 3, No. 2, November 2021, 55-69
+                                P-ISSN: 2657-0424, E-ISSN: 2657-0432</p>
+                            <a href="https://drive.google.com/file/d/1nt5U0rPIBsYLwuDGmcAv3WZbxoO9ghYr/view?usp=share_link" target="_blank" class="btn btn-primary d-grid">Referensi Pertama</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-2 col-4 mt-3">
+                    <div class="card text-center">
+                        <img src="img/baru.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4>SPK Rekomendasi Bantuan UMKM</h4>
+                            <p>Techno Xplore
+                                Jurnal Ilmu Komputer dan Teknologi Informasi
+                                ISSN: 2503-054X
+                                Vol. 7 No: 2, Oktober 2022</p>
+                            <a href="https://drive.google.com/file/d/1EIQ5uLfmNUjJwkJE2C0s-k3Ys5FLwVgz/view?usp=share_link" target="_blank" class="btn btn-primary d-grid">Referensi Kedua</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-2 col-4 mt-3">
+                    <div class="card text-center">
+                        <img src="img/baru.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4>SPK Penerima Bantuan UMKM Metode MAUT</h4>
+                            <p>Jurnal Nasional Komputasi dan Teknologi Informasi
+                                Vol. 5 No. 2, April 2022
+                                P-ISSN 2620-8342
+                                E-ISSN 2621-3052</p>
+                            <a href="https://drive.google.com/file/d/1KXbWMEC7LdwR3ZO_ojjBegEQPUoFrA4O/view?usp=share_link" target="_blank"  class="btn btn-primary d-grid">Referensi Kedua</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-12 ms-auto mt-5">
-            <div class="container">
-                <img src="img/dashboard.jpg" width="700" height="500">
-            </div>
-        </div>
+        <!-- CARD -->
     </div>
-    <!-- Jumbotron -->
 
     <br>
     <div class="footer text-center">
         <p>Aldian Faizzul Anwar-200605110170 &copy; <?php echo date("Y") ?></p> <!-- membuat tahun secara dinamic dengan PHP  -->
     </div>
+
 
 
 

@@ -40,6 +40,10 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
+                                <li><a class="dropdown-item" href="metodemultimoora.php">Metode Multimoora</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                             </ul>
                         </li>
                         <!-- DROP DOWN METODE -->

@@ -1,5 +1,65 @@
-<?php
+<?php 
 include "../config.php";
+error_reporting(0);
+
+
+if(isset($_POST['simpan'])){
+
+    if($_GET['hal'] == "edit")
+    {
+
+    //data di edit
+        $edit = $koneksi -> query("UPDATE tb_bobot SET id_bobot = '$_POST[idbobot]', id_kriteria = '$_POST[idkriteria]', 
+                                bobot = '$_POST[bobot]' WHERE id_bobot = '$_GET[id]'");
+
+        if ($edit == true){
+            echo "<script>alert('Edit SUKSES');
+                window.location.href=('formbobot.php');</script>";
+        }else{
+        echo "<script>alert('Edit GAGAL');
+            window.location.href=('formbobot.php');</script>";
+        }
+
+    }else{
+
+    //data disimpan baru
+        $insert = $koneksi -> query("INSERT INTO `tb_bobot` (id_bobot, id_kriteria, bobot) 
+                                        VALUES ('$_POST[idbobot]', '$_POST[idkriteria]', '$_POST[bobot]');");
+
+        if ($insert == true){
+            echo "<script>alert('Input SUKSES');
+                window.location.href=('formbobot.php');</script>";
+        }else{
+        echo "<script>alert('Input GAGAL');
+            window.location.href=('formbobot.php');</script>";
+        }
+    }
+}
+
+if(isset($_GET['hal']))
+{
+    //Pengujian jika edit
+    if($_GET['hal'] == "edit")
+    {
+        $tampil = mysqli_query($koneksi, "SELECT * FROM tb_bobot WHERE id_bobot='$_GET[id]'");
+        $data = mysqli_fetch_array($tampil);
+        if($data)
+        {
+            $idbobot = $data['id_bobot'];
+            $kriteria = $data['id_kriteria'];
+            $bobot = $data['bobot'];       
+            
+            
+        }
+    }else if($_GET['hal'] == "hapus"){
+        $hapus = mysqli_query($koneksi, "DELETE FROM tb_bobot WHERE id_bobot = '$_GET[id]'");
+
+        if($hapus){
+            echo "<script>alert('Hapus Data SUKSES');
+                window.location.href=('formbobot.php');</script>";
+        }
+    }
+}
 ?>
 
 
@@ -20,12 +80,17 @@ include "../config.php";
                     <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Aldianfa-170</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
+                <div class="offcanvas-body fs-6">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../home.php">Home</a>
+                            <a class="nav-link" aria-current="page" href="../home.php">Home</a>
+                        </li>
+                        <li>
+                            <hr class="divider">
+                        </li>
 
-                            <!-- Drop DOWN Metode -->
+
+                        <!-- Drop DOWN Metode -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Metode
@@ -35,11 +100,15 @@ include "../config.php";
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="../metodewp.php">Metode WP</a></li>
+                                <li><a class="dropdown-item disabled" href="metodewp.php">Metode WP</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="../metodetopsis.php">Metode Topsis</a></li>
+                                <li><a class="dropdown-item disabled" href="metodetopsis.php">Metode Topsis</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item disabled" href="metodemultimoora.php">Metode Multimoora</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -74,7 +143,7 @@ include "../config.php";
                         </li>
                         <!-- DROP DOWN TABEL DETAIL -->
 
-                        <!-- DROP DOWN TABEL METODE SAW -->
+                        <!-- DROP DOWN VIEW -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Tabel View
@@ -103,16 +172,25 @@ include "../config.php";
                                 <li><a class="dropdown-item" href="../vrangking.php">Rangking</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="../hasil.php">Hasil Akhir</a>
+                        </li>
+                        <li>
+                            <hr class="divider">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="../referensi.php">Latar Belakang dan Referensi</a>
+                        </li>
                         <!-- DROP DOWN TABEL METODE SAW -->
 
                     </ul>
-                    <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-success" type="submit">Search</button>
-                    </form>
+                    <!-- <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form> -->
                 </div>
             </div>
-            <a class="navbar-brand" href="../index.php"> <b>DSS Penerima BPUM 2022</a>
+            <a class="navbar-brand" href="index.php"> <b>DSS Penerima BPUM 2022</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -130,32 +208,32 @@ include "../config.php";
                 <h2>Input Bobot</h2>
             </div>
             <div class="card-body">
-                <form action="../aksi/actbobot.php" method="POST">
+                <form action="" method="POST">
                     <div class="row">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Id Bobot</label>
-                            <input type="text" class="form-control" name="idbobot" required="" placeholder="idbobot">
+                            <input type="text" class="form-control" name="idbobot" required="" placeholder="idbobot" value="<?=@$idbobot?>" >
 
-                            <label for="exampleInputEmail1" class="form-label mt-4">Id Kriteria</label>
-                            <select class="form-select" name="idkriteria">
+                            <label for="exampleInputEmail1" class="form-label mt-4">Id Kriteria - <b>DATA TIDAK BISA DI EDIT</b></label>
+                            <select class="form-select" name="idkriteria" value="<?=@$kriteria?>">
                                 <option>----</option>
                                 <?php
                                 include "../config.php";
                                 $a = "SELECT * FROM tb_kriteria";
                                 $b = $koneksi->query($a);
                                 while ($c = $b->fetch_array()) {
-                                    echo "<option value=$c[idkriteria]> $c[nmkriteria] </option>";
+                                    echo "<option value=$c[id_kriteria]> $c[nm_kriteria] </option>";
                                 }
                                 ?>
                             </select>
 
                             <label for="exampleInputEmail1" class="form-label mt-4">value</label>
-                            <input type="text" class="form-control" name="nilai" required="" placeholder="value">
+                            <input type="text" class="form-control" name="bobot" required="" placeholder="value" value="<?=@$bobot?>">
                         </div>
                     </div>
                     <div class="row ">
                         <div class="col-md-6 d-grid">
-                            <button type="submit" class="btn btn-success">Input</button>
+                            <button type="submit" class="btn btn-success" name="simpan">Input</button>
                         </div>
                         <div class="col-md-6 d-grid">
                             <button type="reset" class="btn btn-danger">Hapus</button>
@@ -179,7 +257,7 @@ include "../config.php";
                         <tr class="text-center">
                             <td>Id Bobot</td>
                             <td>Id Kriteria</td>
-                            <td>Value</td>
+                            <td>Value Bobot</td>
                         </tr>
                     </thead>
                     <?php
@@ -191,8 +269,12 @@ include "../config.php";
                     ?>
                         <tr>
                             <td><?php echo $idbobot++; ?></td>
-                            <td><?php echo $c['idkriteria']; ?></td>
-                            <td><?php echo $c['value']; ?></td>
+                            <td><?php echo $c['id_kriteria']; ?></td>
+                            <td><?php echo $c['bobot']; ?></td>
+                            <td>
+                                <a href="formbobot.php?hal=edit&id=<?=$c['id_bobot']?> " class="btn btn-warning">Edit</a>
+                                <a href="formbobot.php?hal=hapus&id=<?=$c['id_bobot']?>" onclick="return confirm('Yakin Tabel Ini Dihapus?')" class="btn btn-danger">Hapus</a>
+                            </td>
                         </tr>
                     <?php
                     }

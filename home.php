@@ -18,12 +18,17 @@
                 <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Aldianfa-170</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
+            <div class="offcanvas-body fs-6">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+                        <a class="nav-link" aria-current="page" href="home.php">Home</a>
+                    </li>
+                    <li>
+                        <hr class="divider">
+                    </li>
 
-                        <!-- Drop DOWN Metode -->
+
+                    <!-- Drop DOWN Metode -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Metode
@@ -33,11 +38,15 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="metodewp.php">Metode WP</a></li>
+                            <li><a class="dropdown-item disabled" href="metodewp.php">Metode WP</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="metodetopsis.php">Metode Topsis</a></li>
+                            <li><a class="dropdown-item disabled" href="metodetopsis.php">Metode Topsis</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item disabled" href="metodemultimoora.php">Metode Multimoora</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -101,13 +110,22 @@
                             <li><a class="dropdown-item" href="vrangking.php">Rangking</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="hasil.php">Hasil Akhir</a>
+                    </li>
+                    <li>
+                        <hr class="divider">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="referensi.php">Latar Belakang dan Referensi</a>
+                    </li>
                     <!-- DROP DOWN TABEL METODE SAW -->
 
                 </ul>
-                <form class="d-flex mt-3" role="search">
+                <!-- <form class="d-flex mt-3" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-success" type="submit">Search</button>
-                </form>
+                </form> -->
             </div>
         </div>
         <a class="navbar-brand" href="index.php"> <b>DSS Penerima BPUM 2022</a>
@@ -119,27 +137,32 @@
 </nav>
 <!-- NAVBAR -->
 
+
 <body>
 
     <br>
 
     <!-- TABEL KRITERIA-->
     <div class="container mt-5">
-    
-    <div class="container mt-5">
-        <div class="card mt-3">
-            <div class="card-header bg-dark text-center text-white fs-22">
-                <h4>Tabel Utama</h4>
+
+        <div class="container mt-5">
+            <div class="card mt-3">
+                <div class="card-header bg-dark text-center text-white fs-22">
+                    <h4>Tabel Utama</h4>
+                </div>
+                <div class="card-body text-center">
+                    <p></p>
+                    <h6> Tabel utama merupakan tabel yang digunakan untuk proses input data yang nantinya akan di proses dalam perhitungan dengan metode SAW. Pada tabel inilah kita bisa melakukan proses CRUD. Terdapat 5 tabel utama pada metode SAW yang saya buat yaitu, Tabel Alternatif, Tabel Kriteria, Tabel Bobot, Tabel Matrix, Tabel Skala </h6>
+                </div>
             </div>
         </div>
-    </div>
-    <br>
+        <br>
 
         <div class="card mt-3">
             <div class="card-header bg-dark text-center text-white fs-22">
                 <h4>Tabel Kriteria</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body ">
                 <table class="table table-bordered table-striped">
                     <tr class="text-center">
                         <th>Nama Kriteria</th>
@@ -155,13 +178,15 @@
                     ?>
                         <tr>
                             <td><?php echo $idkriteria++; ?></td>
-                            <td><?php echo $c['nmkriteria']; ?></td>
+                            <td><?php echo $c['nm_kriteria']; ?></td>
                             <td><?php echo $c['tipe']; ?></td>
                         </tr>
                     <?php
                     }
                     ?>
                 </table>
+                <a class="btn btn-success fs-5 center" href="form/formkriteria.php">Lihat Tabel</a>
+
             </div>
         </div>
     </div>
@@ -190,12 +215,14 @@
                     ?>
                         <tr>
                             <td><?php echo $idalternatif++; ?></td>
-                            <td><?php echo $c['nmalternatif']; ?></td>
+                            <td><?php echo $c['nm_alternatif']; ?></td>
                         </tr>
                     <?php
                     }
                     ?>
+
                 </table>
+                <a class="btn btn-success fs-5 center" href="form/formalternatif.php">Lihat Tabel</a>
             </div>
         </div>
     </div>
@@ -205,7 +232,7 @@
     <div class="container mt-5">
         <div class="card mt-3">
             <div class="card-header bg-dark text-center text-white fs-18">
-                <h4>Tabel Kriteria</h4>
+                <h4>Tabel Bobot</h4>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
@@ -213,25 +240,27 @@
                         <tr class="text-center">
                             <td>Id Bobot</td>
                             <td>Id Kriteria</td>
-                            <td>value</td>
+                            <td>Nilai Bobot</td>
                         </tr>
                     </thead>
                     <?php
                     include "config.php";
                     $idbobot = 1;
-                    $a = "SELECT * FROM tb_bobot";
+                    // $a = "SELECT * FROM tb_bobot";
+                    $a = "SELECT * FROM tb_bobot INNER JOIN tb_kriteria ON tb_bobot.id_kriteria = tb_kriteria.id_kriteria";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
                             <td><?php echo $idbobot++; ?></td>
-                            <td><?php echo $c['idkriteria']; ?></td>
-                            <td><?php echo $c['value']; ?></td>
+                            <td><?php echo $c['nm_kriteria']; ?></td>
+                            <td><?php echo $c['bobot']; ?></td>
                         </tr>
                     <?php
                     }
                     ?>
                 </table>
+                <a class="btn btn-success fs-5 center" href="form/formbobot.php">Lihat Tabel</a>
             </div>
         </div>
     </div>
@@ -248,28 +277,33 @@
                     <thead>
                         <tr class="text-center">
                             <td>Id Matrix</td>
-                            <td>Id Alternatif</td>
-                            <td>Id Bobot</td>
-                            <td>Id Skala</td>
+                            <td>Nama Alternatif</td>
+                            <td>Nama Kriteria</td>
+                            <td>bobot</td>
+                            <td>keterangan</td>
                         </tr>
                     </thead>
                     <?php
                     include "config.php";
                     $idmatrix = 1;
-                    $a = "SELECT * FROM matrixkeputusan";
+                    $a = "SELECT * FROM tb_matrix INNER JOIN tb_alternatif ON tb_matrix.id_alternatif = tb_alternatif.id_alternatif INNER JOIN tb_bobot ON tb_matrix.id_bobot = tb_bobot.id_bobot INNER JOIN tb_skala ON tb_matrix.id_skala = tb_skala.id_skala INNER JOIN tb_kriteria ON tb_bobot.id_kriteria = tb_kriteria.id_kriteria";
+                    // $a = "SELECT * FROM tb_matrix";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
                             <td><?php echo $idmatrix++; ?></td>
-                            <td><?php echo $c['idalternatif']; ?></td>
-                            <td><?php echo $c['idbobot']; ?></td>
-                            <td><?php echo $c['idskala']; ?></td>
+                            <td><?php echo $c['nm_alternatif']; ?></td>
+                            <td><?php echo $c['nm_kriteria']; ?></td>
+
+                            <td><?php echo $c['bobot']; ?></td>
+                            <td><?php echo $c['keterangan'] ?></td>
                         </tr>
                     <?php
                     }
                     ?>
                 </table>
+                <a class="btn btn-success fs-5 center" href="form/formmatrix.php">Lihat Tabel</a>
             </div>
         </div>
     </div>
@@ -299,13 +333,14 @@
                     ?>
                         <tr>
                             <td><?php echo $idskala++; ?></td>
-                            <td><?php echo $c['value']; ?></td>
+                            <td><?php echo $c['value_skala']; ?></td>
                             <td><?php echo $c['keterangan']; ?></td>
                         </tr>
                     <?php
                     }
                     ?>
                 </table>
+                <a class="btn btn-success fs-5 center" href="form/formskala.php">Lihat Tabel</a>
             </div>
         </div>
     </div>

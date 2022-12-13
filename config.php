@@ -3,7 +3,7 @@
         $host = "localhost";
         $username = "root";
         $password = "";
-        $database = "metodesaw";
+        $database = "backup";
         $koneksi = mysqli_connect($host, $username, $password, $database);
         if ($koneksi){
         } else {

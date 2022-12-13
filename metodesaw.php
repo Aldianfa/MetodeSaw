@@ -15,12 +15,17 @@
                     <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Aldianfa-170</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
+                <div class="offcanvas-body fs-6">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+                            <a class="nav-link" aria-current="page" href="home.php">Home</a>
+                        </li>
+                        <li>
+                            <hr class="divider">
+                        </li>
 
-                            <!-- Drop DOWN Metode -->
+
+                        <!-- Drop DOWN Metode -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Metode
@@ -30,11 +35,15 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="metodewp.php">Metode WP</a></li>
+                                <li><a class="dropdown-item disabled" href="metodewp.php">Metode WP</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="metodetopsis.php">Metode Topsis</a></li>
+                                <li><a class="dropdown-item disabled" href="metodetopsis.php">Metode Topsis</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item disabled" href="metodemultimoora.php">Metode Multimoora</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -98,16 +107,25 @@
                                 <li><a class="dropdown-item" href="vrangking.php">Rangking</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="hasil.php">Hasil Akhir</a>
+                        </li>
+                        <li>
+                            <hr class="divider">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="referensi.php">Latar Belakang dan Referensi</a>
+                        </li>
                         <!-- DROP DOWN TABEL METODE SAW -->
 
                     </ul>
-                    <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-success" type="submit">Search</button>
-                    </form>
+                    <!-- <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form> -->
                 </div>
             </div>
-            <a class="navbar-brand" href="#"> <b>DSS Penerima BPUM 2022</a>
+            <a class="navbar-brand" href="index.php"> <b>DSS Penerima BPUM 2022</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -116,41 +134,49 @@
     </nav>
     <!-- NAVBAR -->
 
+
     <br>
     <div class="container mt-5">
         <div class="card mt-3">
             <div class="card-header bg-secondary text-center text-white fs-22">
                 <h4>Metode SAW</h4>
             </div>
+            <div class="card-body text-center">
+                <p>
+                <h6>
+                    Metode SAW merupakan metode yang menggunakan perhitungan atau yang menyediakan jenis-jenis kriteria tertentu yang memiliki bobot hingga nilai akhir yang berbobot akan menjadi keputusan akhir. Perhitungan Simple Additive Weighting (SAW) mengacu pada kriteria masyarakat yang layak menerima sesuai data yang relevan. Dibawah ini merupakan hasil proses dari inputan data melalui tabel utama. Secara berurutan tabel dibawah merupakan tahapan dari metode SAW dalam SPK Rekomendasi Penerima BPUM 2022.
+                </h6>
+                </p>
+            </div>
         </div>
     </div>
 
     <!-- TABEL MAKSIMUM-->
     <div class="container mt-5">
-        
+
         <div class="card mt-3">
             <div class="card-header bg-secondary text-center text-white fs-22">
                 <h4>Nilai Maksimum</h4>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
-                    
-                        <tr class="text-center">
-                            <th>Id Kriteria</th>
-                            <th>Nama Kriteria</th>
-                            <th>Maksimum</th>
-                        </tr>
-                    
+
+                    <tr class="text-center">
+                        <th>Id Kriteria</th>
+                        <th>Nama Kriteria</th>
+                        <th>Maksimum</th>
+                    </tr>
+
                     <?php
                     include "config.php";
-                    $idkriteria = 1;
+                    $id_kriteria = 1;
                     $a = "SELECT * FROM nilaimax";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
-                            <td><?php echo $idkriteria++; ?></td>
-                            <td><?php echo $c['nmkriteria']; ?></td>
+                            <td><?php echo $id_kriteria++; ?></td>
+                            <td><?php echo $c['nm_kriteria']; ?></td>
                             <td><?php echo $c['maksimum']; ?></td>
                         </tr>
                     <?php
@@ -170,14 +196,14 @@
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
-                
-                        <tr class="text-center">
-                            <th>Id Kriteria</th>
-                            <th>Nama Kriteria</th>
-                            <th>Minimum</th>
 
-                        </tr>
-                    
+                    <tr class="text-center">
+                        <th>Id Kriteria</th>
+                        <th>Nama Kriteria</th>
+                        <th>Minimum</th>
+
+                    </tr>
+
                     <?php
                     include "config.php";
                     $idkriteria = 1;
@@ -187,7 +213,7 @@
                     ?>
                         <tr>
                             <td><?php echo $idkriteria++; ?></td>
-                            <td><?php echo $c['nmkriteria']; ?></td>
+                            <td><?php echo $c['nm_kriteria']; ?></td>
                             <td><?php echo $c['minimum']; ?></td>
                         </tr>
                     <?php
@@ -207,36 +233,36 @@
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
-                
-                        <tr>
-                            <th>Id Matrix</th>
-                            <th>Id Alternatif</th>
-                            <th>Nama Alternatif</th>
-                            <th>Id Kriteria</th>
-                            <th>Nama Kriteria</th>
-                            <th>Tipe</th>
-                            <th>Id Bobot</th>
-                            <th>Value</th>
-                            <th>Nilai</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    
+
+                    <tr>
+                        <th>Id Matrix</th>
+                        <th>Id Alternatif</th>
+                        <th>Nama Alternatif</th>
+                        <th>Id Kriteria</th>
+                        <th>Nama Kriteria</th>
+                        <th>Tipe</th>
+                        <th>Id Bobot</th>
+                        <th>Value</th>
+                        <th>Nilai</th>
+                        <th>Keterangan</th>
+                    </tr>
+
                     <?php
                     include "config.php";
-                    // $idkriteria = 1;
-                    $a = "SELECT * FROM vmatrixkeputusan";
+                    $id_matrix = 1;
+                    $a = "SELECT * FROM vmatrixkeputusan ORDER BY id_matrix ASC";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
-                            <td><?php echo $c['idmatrix']; ?></td>
-                            <td><?php echo $c['idalternatif']; ?></td>
-                            <td><?php echo $c['nmalternatif']; ?></td>
-                            <td><?php echo $c['idkriteria']; ?></td>
-                            <td><?php echo $c['nmkriteria']; ?></td>
+                            <td><?php echo $c['id_matrix']; ?></td>
+                            <td><?php echo $c['id_alternatif']; ?></td>
+                            <td><?php echo $c['nm_alternatif']; ?></td>
+                            <td><?php echo $c['id_kriteria']; ?></td>
+                            <td><?php echo $c['nm_kriteria']; ?></td>
                             <td><?php echo $c['tipe']; ?></td>
-                            <td><?php echo $c['idbobot']; ?></td>
-                            <td><?php echo $c['value']; ?></td>
+                            <td><?php echo $c['id_bobot']; ?></td>
+                            <td><?php echo $c['bobot']; ?></td>
                             <td><?php echo $c['nilai']; ?></td>
                             <td><?php echo $c['keterangan']; ?></td>
                         </tr>
@@ -257,21 +283,21 @@
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
-                    
-                        <tr>
-                            <th>Id Matrix</th>
-                            <th>Id Alternatif</th>
-                            <th>Nama Alternatif</th>
-                            <th>Id Kriteria</th>
-                            <th>Nama Kriteria</th>
-                            <th>Tipe</th>
-                            <th>Id Bobot</th>
-                            <th>Value</th>
-                            <th>Nilai</th>
-                            <th>Keterangan</th>
-                            <th>Normalisasi</th>
-                        </tr>
-                    
+
+                    <tr>
+                        <th>Id Matrix</th>
+                        <th>Id Alternatif</th>
+                        <th>Nama Alternatif</th>
+                        <th>Id Kriteria</th>
+                        <th>Nama Kriteria</th>
+                        <th>Tipe</th>
+                        <th>Id Bobot</th>
+                        <th>Value</th>
+                        <th>Nilai</th>
+                        <th>Keterangan</th>
+                        <th>Normalisasi</th>
+                    </tr>
+
                     <?php
                     include "config.php";
                     // $idkriteria = 1;
@@ -280,14 +306,14 @@
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
-                            <td><?php echo $c['idmatrix']; ?></td>
-                            <td><?php echo $c['idalternatif']; ?></td>
-                            <td><?php echo $c['nmalternatif']; ?></td>
-                            <td><?php echo $c['idkriteria']; ?></td>
-                            <td><?php echo $c['nmkriteria']; ?></td>
+                            <td><?php echo $c['id_matrix']; ?></td>
+                            <td><?php echo $c['id_alternatif']; ?></td>
+                            <td><?php echo $c['nm_alternatif']; ?></td>
+                            <td><?php echo $c['id_kriteria']; ?></td>
+                            <td><?php echo $c['nm_kriteria']; ?></td>
                             <td><?php echo $c['tipe']; ?></td>
-                            <td><?php echo $c['idbobot']; ?></td>
-                            <td><?php echo $c['value']; ?></td>
+                            <td><?php echo $c['id_bobot']; ?></td>
+                            <td><?php echo $c['bobot']; ?></td>
                             <td><?php echo $c['nilai']; ?></td>
                             <td><?php echo $c['keterangan']; ?></td>
                             <td><?php echo $c['normalisasi']; ?></td>
@@ -309,38 +335,38 @@
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
-                    
-                        <tr>
-                            <th>Id Matrix</th>
-                            <th>Id Alternatif</th>
-                            <th>Nama Alternatif</th>
-                            <th>Id Kriteria</th>
-                            <th>Nama Kriteria</th>
-                            <th>Tipe</th>
-                            <th>Id Bobot</th>
-                            <th>Value</th>
-                            <th>Nilai</th>
-                            <th>Keterangan</th>
-                            <th>Normalisasi</th>
-                            <th>Pra Rangking</th>
-                        </tr>
-                    
+
+                    <tr>
+                        <th>Id Matrix</th>
+                        <th>Id Alternatif</th>
+                        <th>Nama Alternatif</th>
+                        <th>Id Kriteria</th>
+                        <th>Nama Kriteria</th>
+                        <th>Tipe</th>
+                        <th>Id Bobot</th>
+                        <th>Value</th>
+                        <th>Nilai</th>
+                        <th>Keterangan</th>
+                        <th>Normalisasi</th>
+                        <th>Pra Rangking</th>
+                    </tr>
+
                     <?php
                     include "config.php";
                     // $idkriteria = 1;
-                    $a = "SELECT * FROM vprarangking";
+                    $a = "SELECT * FROM prarangking";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
-                            <td><?php echo $c['idmatrix']; ?></td>
-                            <td><?php echo $c['idalternatif']; ?></td>
-                            <td><?php echo $c['nmalternatif']; ?></td>
-                            <td><?php echo $c['idkriteria']; ?></td>
-                            <td><?php echo $c['nmkriteria']; ?></td>
+                            <td><?php echo $c['id_matrix']; ?></td>
+                            <td><?php echo $c['id_alternatif']; ?></td>
+                            <td><?php echo $c['nm_alternatif']; ?></td>
+                            <td><?php echo $c['id_kriteria']; ?></td>
+                            <td><?php echo $c['nm_kriteria']; ?></td>
                             <td><?php echo $c['tipe']; ?></td>
-                            <td><?php echo $c['idbobot']; ?></td>
-                            <td><?php echo $c['value']; ?></td>
+                            <td><?php echo $c['id_bobot']; ?></td>
+                            <td><?php echo $c['bobot']; ?></td>
                             <td><?php echo $c['nilai']; ?></td>
                             <td><?php echo $c['keterangan']; ?></td>
                             <td><?php echo $c['normalisasi']; ?></td>
@@ -363,24 +389,24 @@
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
-                    
-                        <tr>
 
-                            <th>Id Alternatif</th>
-                            <th>Nama Alternatif</th>
-                            <th>Rangking</th>
-                        </tr>
-                    
+                    <tr>
+
+                        <th>Id Alternatif</th>
+                        <th>Nama Alternatif</th>
+                        <th>Rangking</th>
+                    </tr>
+
                     <?php
                     include "config.php";
                     // $idkriteria = 1;
-                    $a = "SELECT * FROM vrangking";
+                    $a = "SELECT * FROM rangking ORDER BY rangking DESC";
                     $b = $koneksi->query($a);
                     while ($c = $b->fetch_array()) {
                     ?>
                         <tr>
-                            <td><?php echo $c['idalternatif']; ?></td>
-                            <td><?php echo $c['nmalternatif']; ?></td>
+                            <td><?php echo $c['id_alternatif']; ?></td>
+                            <td><?php echo $c['nm_alternatif']; ?></td>
                             <td><?php echo $c['rangking']; ?></td>
                         </tr>
                     <?php
